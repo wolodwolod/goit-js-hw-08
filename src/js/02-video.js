@@ -25,6 +25,7 @@ player.on('play', function () {
         console.log('title:', title);
     });
 
+    
 // player.getCurrentTime().then(function (seconds) {
 //        console.log('seconds:', seconds);
 //     // seconds = the current playback position
