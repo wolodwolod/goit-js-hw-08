@@ -36,14 +36,15 @@ function onTextareaInput(e) {
 function onFormSubmit(e) {
   e.preventDefault();
 
-  if (refs.input.value === '' || refs.textarea.value === '') {
-    alert("ПОЛЯ EMAIL и MESSAGE ДОЛЖНЫ БЫТЬ ЗАПОЛНЕНЫ !");
-    return;
-  }
-  console.log(formStateValue);
+  if (refs.input.value !== '' && refs.textarea.value !== '') {
+    console.log(formStateValue);
   e.currentTarget.reset();
   localStorage.removeItem("feedback-form-state");
-};
+  } else
+  {
+    alert("ПОЛЯ EMAIL и MESSAGE ДОЛЖНЫ БЫТЬ ЗАПОЛНЕНЫ !");
+    return;}
+  };
 
 function populateTextarea() {
     const savedFormStateValue = localStorage.getItem("feedback-form-state");
