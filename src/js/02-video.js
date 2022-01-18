@@ -24,14 +24,8 @@ const throttledSetLocalStorageCurrentTime = throttle(setLocalStorageCurrentTime,
       
 player.on('timeupdate', throttledSetLocalStorageCurrentTime);
 
-
-function setLocalStorageCurrentTime (data) {           
-          
-        localStorage.setItem("videoplayer-current-time", data.seconds);
-        console.log(data.seconds); 
-        };
-
-    player.getVideoTitle().then(function(title) {
+    
+player.getVideoTitle().then(function (title) {
         console.log('title:', title);
     });
 
