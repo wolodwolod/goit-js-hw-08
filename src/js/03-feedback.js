@@ -36,6 +36,10 @@ function onTextareaInput(e) {
 function onFormSubmit(e) {
   e.preventDefault();
 
+  if (refs.input.value === '' || refs.textarea.value === '') {
+    alert("ПОЛЯ EMAIL и MESSAGE ДОЛЖНЫ БЫТЬ ЗАПОЛНЕНЫ !");
+    return;
+  }
   console.log(formStateValue);
   e.currentTarget.reset();
   localStorage.removeItem("feedback-form-state");
@@ -52,6 +56,6 @@ function populateTextarea() {
 
         if (savedFormStateValue) {
         refs.input.value = parsedSavedFormStateValue.email;
-        refs.textarea.value = parsedSavedFormStateValue.message
+          refs.textarea.value = parsedSavedFormStateValue.message;
            }
 };
